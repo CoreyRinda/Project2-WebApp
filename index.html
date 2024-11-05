@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance Request System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Maintenance Request System</h1>
+
+    <!-- Tenant Section -->
+    <section id="tenant-section">
+        <h2>Submit Maintenance Request</h2>
+        <form id="maintenance-request-form">
+            <input type="text" id="tenant-apartment-number" placeholder="Apartment Number" required>
+            <input type="text" id="tenant-area" placeholder="Area (e.g., Kitchen, Bathroom)" required>
+            <textarea id="tenant-description" placeholder="Description of Problem" required></textarea>
+            <input type="file" id="tenant-photo" accept="image/*">
+            <button type="submit">Submit Request</button>
+        </form>
+    </section>
+
+    <!-- Maintenance Staff Section -->
+    <section id="staff-section">
+        <h2>Browse Maintenance Requests</h2>
+        <div id="filters">
+            <input type="text" id="filter-apartment-number" placeholder="Filter by Apartment Number">
+            <input type="text" id="filter-area" placeholder="Filter by Area">
+            <select id="filter-status">
+                <option value="">Filter by Status</option>
+                <option value="pending">Pending</option>
+                <option value="completed">Completed</option>
+            </select>
+            <button onclick="filterRequests()">Apply Filters</button>
+        </div>
+        <div id="maintenance-requests-list"></div>
+    </section>
+
+    <!-- Manager Section -->
+    <section id="manager-section">
+        <h2>Manage Tenants</h2>
+        <form id="add-tenant-form">
+            <input type="text" id="tenant-name" placeholder="Tenant Name" required>
+            <input type="text" id="tenant-phone" placeholder="Phone Number" required>
+            <input type="email" id="tenant-email" placeholder="Email" required>
+            <input type="text" id="tenant-apartment" placeholder="Apartment Number" required>
+            <button type="submit">Add Tenant</button>
+        </form>
+        <div id="tenants-list"></div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
